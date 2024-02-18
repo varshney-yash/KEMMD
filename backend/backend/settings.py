@@ -44,6 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+PROJECT_APPS = [
+    'users',
+]
+
+INSTALLED_APPS+=PROJECT_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -77,10 +83,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-print("MYSQL_DATABASE:", os.getenv('MYSQL_DATABASE'))
-print("MYSQL_USER:", os.getenv('MYSQL_USER'))
-print("MYSQL_PASSWORD:", os.getenv('MYSQL_PASSWORD'))
-print("MYSQL_HOST:", os.getenv('MYSQL_HOST', 'localhost'))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
